@@ -1,13 +1,13 @@
 pipeline{
   agent any
   environment{
-    GIT_BRANCH: 'master'
+    git_branch: 'master'
     url: 'https://github.com/Aves4/demo2.git'
   }
   stages{
     stage(clone){
       steps{
-        git branch:"${GIT_BRANCH}", "${url}"
+        git branch:"${git_branch}", "${url}"
       }
     }
     stage(compile){
